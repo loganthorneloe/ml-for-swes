@@ -9,10 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
+    <div class="gradient-bg">
+        <div class="gradient-animation"></div>
+    </div>
+    
     <main class="container">
-        <section class="description">
+        <section class="description" data-aos="fade-up">
             <p>
               <strong class="gradient-text">Machine learning for software engineers</strong> is a machine learning guide on how to build machine learning systems from the ground up. <strong>This guide is free and always will be.</strong>
             </p>
@@ -24,37 +29,77 @@
             </p>
         </section>
 
-        <section class="resources">
-            <div class="resource-card">
-                <i class="fas fa-square card-icon"></i>
-                <h2>Learn</h2>
+        <section class="resources" id="learn" data-aos="fade-up">
+            <div class="resource-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card-icon-wrapper">
+                    <i class="fas fa-square card-icon"></i>
+                    <h2>Learn</h2>
+                </div>
                 <p>Learn machine learning from first principles via a streamlined roadmap. Skip what you already know.</p>
-                <a href="#" class="resource-link">Learn <i class="fas fa-arrow-right"></i></a>
+                <div class="card-features">
+                    <span><i class="fas fa-check"></i>Structured Curriculum</span>
+                    <span><i class="fas fa-check"></i>Interactive Tutorials</span>
+                    <span><i class="fas fa-check"></i>Progress Tracking</span>
+                </div>
+                <a href="#" class="resource-link">Start Learning <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <div class="resource-card">
-                <i class="fas fa-circle card-icon"></i>
-                <h2>Build</h2>
+            <div class="resource-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card-icon-wrapper">
+                    <i class="fas fa-circle card-icon"></i>
+                    <h2>Build</h2>
+                </div>
                 <p>Build real-world machine learning systems via guided hands-on coding projects.</p>
-                <a href="#" class="resource-link">Build <i class="fas fa-arrow-right"></i></a>
+                <div class="card-features">
+                    <span><i class="fas fa-check"></i>Real Projects</span>
+                    <span><i class="fas fa-check"></i>Code Reviews</span>
+                    <span><i class="fas fa-check"></i>Best Practices</span>
+                </div>
+                <a href="#" class="resource-link">Start Building <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <div class="resource-card">
-                <i class="fas fa-play card-icon"></i>
-                <h2>Community</h2>
+            <div class="resource-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card-icon-wrapper">
+                    <i class="fas fa-play card-icon"></i>
+                    <h2>Community</h2>
+                </div>
                 <p>The machine learning community for software engineers. Build, learn, and network together.</p>
-                <a href="#" class="resource-link">Join <i class="fas fa-arrow-right"></i></a>
+                <div class="card-features">
+                    <span><i class="fas fa-check"></i>Weekly Events</span>
+                    <span><i class="fas fa-check"></i>Peer Learning</span>
+                    <span><i class="fas fa-check"></i>Job Network</span>
+                </div>
+                <a href="#" class="resource-link">Join Community <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
-        <section class="newsletter">
-            <p>
-              <strong class="gradient-text">Get machine learning resources, tips, and job market updates weekly.</strong>
-            </p>
-            <form class="signup-form">
-                <input type="email" placeholder="Email" required>
-                <button type="submit">Subscribe</button>
-            </form>
+        <section class="newsletter" data-aos="fade-up">
+            <div class="newsletter-content">
+                <h2 class="gradient-text">Join 4,100+ Software Engineers Learning ML</h2>
+                <p>Get weekly ML resources, tips, and job market updates.</p>
+                <div class="social-proof">
+                    <div class="avatar-stack">
+                        <img src="https://i.pravatar.cc/40?img=1" alt="Member" class="avatar">
+                        <img src="https://i.pravatar.cc/40?img=2" alt="Member" class="avatar">
+                        <img src="https://i.pravatar.cc/40?img=3" alt="Member" class="avatar">
+                        <span class="avatar-more">+4k</span>
+                    </div>
+                    <p class="social-proof-text">Engineers joined this week</p>
+                </div>
+                <form class="signup-form">
+                    <div class="form-container">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Subscribe</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <small class="form-footer">🔒 No spam. Unsubscribe anytime.</small>
+                </form>
+            </div>
         </section>
 
         <section class="faqs">
@@ -147,7 +192,15 @@
             <p class="copyright">&copy; 2025 Logan Thorneloe</p>
         </footer>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
@@ -166,6 +219,72 @@
                 }
             });
         });
+
+        // Add hover effect to resource cards
+        document.querySelectorAll('.resource-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('hover');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('hover');
+            });
+        });
+
+        // Animate numbers in stats
+        const animateValue = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Animate stats when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const finalNumber = parseInt(stat.innerText);
+                        animateValue(stat, 0, finalNumber, 2000);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelector('.stats-container') && 
+        observer.observe(document.querySelector('.stats-container'));
+
+        // Add Substack subscriber count fetching
+        async function updateSubscriberCount() {
+            try {
+                const response = await fetch('YOUR_SUBSTACK_API_ENDPOINT');
+                const data = await response.json();
+                const subscriberCount = data.subscriberCount;
+                
+                // Update the display
+                document.querySelector('.newsletter h2').textContent = 
+                    `Join ${subscriberCount.toLocaleString()}+ Software Engineers Learning ML`;
+                
+                // Update the avatar stack count
+                document.querySelector('.avatar-more').textContent = 
+                    `+${Math.floor(subscriberCount/1000)}k`;
+            } catch (error) {
+                console.error('Failed to fetch subscriber count:', error);
+            }
+        }
+
+        // Call it once on load
+        updateSubscriberCount();
+        
+        // Update every hour
+        setInterval(updateSubscriberCount, 3600000);
     </script>
 </body>
 </html> 
