@@ -94,6 +94,81 @@ body {
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.resource-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+/* Card-specific hover styles */
+.resource-card[href="learn.html"]:hover,
+.resource-card[href$="#learn"]:hover {
+    border-color: var(--accent-color-1);
+}
+
+.resource-card[href$="#build"]:hover {
+    border-color: var(--accent-color-2);
+}
+
+.resource-card[href$="#grow"]:hover {
+    border-color: var(--accent-color-3);
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+.resource-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+    font-size: 0.8rem;
+}
+
+/* Card-specific styles */
+.resource-card[href="learn.html"] .card-icon,
+.resource-card[href="learn.html"] .resource-link,
+.resource-card[href$="#learn"] .card-icon,
+.resource-card[href$="#learn"] .resource-link {
+    color: var(--accent-color-1);
+    transition: transform 0.3s ease;
+}
+
+.resource-card[href$="#build"] .card-icon,
+.resource-card[href$="#build"] .resource-link {
+    color: var(--accent-color-2);
+    transition: transform 0.3s ease;
+}
+
+.resource-card[href$="#grow"] .card-icon {
+    color: var(--accent-color-3);
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.resource-card[href$="#grow"] .resource-link {
+    color: var(--accent-color-3);
+}
+
+.resource-card:hover .resource-link i {
+    transform: translateX(4px);
+}
+
+.resource-card[href$="#grow"]:hover .card-icon {
+    transform: rotate(-90deg) scale(1.1);
+}
+
+/* Remove the general card icon hover since we handle it specifically above */
+.resource-card:hover .card-icon {
+    transition: transform 0.3s ease;
 }
 
 .card-icon {
@@ -119,78 +194,6 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     flex-grow: 1;
-}
-
-.resource-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: auto;
-    font-size: 0.9rem;
-}
-
-.resource-link i {
-    margin-left: 0.5rem;
-    transition: transform 0.2s ease;
-    font-size: 0.8rem;
-}
-
-/* Card-specific styles */
-.resource-card:nth-child(1) .card-icon,
-.resource-card:nth-child(1) .resource-link {
-    color: var(--accent-color-1);
-    transition: transform 0.3s ease;
-}
-
-.resource-card:nth-child(2) .card-icon,
-.resource-card:nth-child(2) .resource-link {
-    color: var(--accent-color-2);
-    transition: transform 0.3s ease;
-}
-
-.resource-card:nth-child(3) .card-icon {
-    color: var(--accent-color-3);
-    transform: rotate(-90deg);
-    transform-origin: center;
-    transition: all 0.3s ease;
-    will-change: transform;
-}
-
-.resource-card:nth-child(3) .resource-link {
-    color: var(--accent-color-3);
-}
-
-/* Card-specific hover styles */
-.resource-card:nth-child(1):hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-color-1);
-    box-shadow: 0 4px 12px var(--card-shadow);
-}
-
-.resource-card:nth-child(2):hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-color-2);
-    box-shadow: 0 4px 12px var(--card-shadow);
-}
-
-.resource-card:nth-child(3):hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-color-3);
-    box-shadow: 0 4px 12px var(--card-shadow);
-}
-
-.resource-card:hover .resource-link i {
-    transform: translateX(4px);
-}
-
-.resource-card:nth-child(3):hover .card-icon {
-    transform: rotate(-90deg) scale(1.1);
-}
-
-/* Remove the general card icon hover since we handle it specifically above */
-.resource-card:hover .card-icon {
-    transition: transform 0.3s ease;
 }
 
 /* Newsletter Section */
@@ -785,15 +788,16 @@ body {
 }
 
 /* Match checkmark colors to card colors */
-.resource-card:nth-child(1) .card-features i {
+.resource-card[href="learn.html"] .card-features i,
+.resource-card[href$="#learn"] .card-features i {
     color: var(--accent-color-1);
 }
 
-.resource-card:nth-child(2) .card-features i {
+.resource-card[href$="#build"] .card-features i {
     color: var(--accent-color-2);
 }
 
-.resource-card:nth-child(3) .card-features i {
+.resource-card[href$="#grow"] .card-features i {
     color: var(--accent-color-3);
 }
 
@@ -813,12 +817,12 @@ body {
 }
 
 /* Card hover effects */
-.resource-card:nth-child(1):hover .card-icon,
-.resource-card:nth-child(2):hover .card-icon {
+.resource-card[href="learn.html"]:hover .card-icon,
+.resource-card[href$="#learn"]:hover .card-icon {
     transform: scale(1.1);
 }
 
-.resource-card:nth-child(3):hover .card-icon {
+.resource-card[href$="#grow"]:hover .card-icon {
     transform: rotate(-90deg) scale(1.1);
 }
 
