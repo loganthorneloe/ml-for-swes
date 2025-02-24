@@ -16,6 +16,37 @@
         <div class="gradient-animation"></div>
     </div>
     
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-square"></i></div>
+                <div class="logo-icon"><i class="fas fa-circle"></i></div>
+                <div class="logo-icon"><i class="fas fa-play"></i></div>
+            </a>
+            <button class="mobile-menu-btn">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="nav-links">
+                <a href="#learn">Learn</a>
+                <a href="#build">Build</a>
+                <a href="#community">Community</a>
+                <a href="#faqs">FAQs</a>
+                <button class="get-started-btn">Get Started</button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <a href="#learn">Learn</a>
+            <a href="#build">Build</a>
+            <a href="#community">Community</a>
+            <a href="#faqs">FAQs</a>
+            <button class="get-started-btn">Get Started</button>
+        </div>
+    </header>
+    
     <main class="container">
         <section class="description" data-aos="fade-up">
             <p>
@@ -24,13 +55,10 @@
             <p>
                 <strong>Every software engineer needs to understand machine learning.</strong> Machine learning is the way to solve complex problems with computers. Understanding machine learning future-proofs your career, boosts your hirability, and increases your income.
             </p>
-            <p>
-                <strong>Learning doesn't have to be difficult.</strong> This guide streamlines the process into 3 simple steps.
-            </p>
         </section>
 
         <section class="resources" id="learn" data-aos="fade-up">
-            <div class="resource-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="resource-card" id="learn-card" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card-icon-wrapper">
                     <i class="fas fa-square card-icon"></i>
                     <h2>Learn</h2>
@@ -41,10 +69,13 @@
                     <span><i class="fas fa-check"></i>Interactive Tutorials</span>
                     <span><i class="fas fa-check"></i>Progress Tracking</span>
                 </div>
-                <a href="#" class="resource-link">Start Learning <i class="fas fa-arrow-right"></i></a>
+                <div class="card-actions">
+                    <span class="time-estimate">2-3 months</span>
+                    <a href="#" class="resource-link">Start Learning <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
 
-            <div class="resource-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="resource-card" id="build" data-aos="zoom-in" data-aos-delay="200">
                 <div class="card-icon-wrapper">
                     <i class="fas fa-circle card-icon"></i>
                     <h2>Build</h2>
@@ -55,10 +86,13 @@
                     <span><i class="fas fa-check"></i>Code Reviews</span>
                     <span><i class="fas fa-check"></i>Best Practices</span>
                 </div>
-                <a href="#" class="resource-link">Start Building <i class="fas fa-arrow-right"></i></a>
+                <div class="card-actions">
+                    <span class="difficulty">Intermediate</span>
+                    <a href="#" class="resource-link">Start Building <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
 
-            <div class="resource-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="resource-card" id="community" data-aos="zoom-in" data-aos-delay="300">
                 <div class="card-icon-wrapper">
                     <i class="fas fa-play card-icon"></i>
                     <h2>Community</h2>
@@ -69,15 +103,24 @@
                     <span><i class="fas fa-check"></i>Peer Learning</span>
                     <span><i class="fas fa-check"></i>Job Network</span>
                 </div>
-                <a href="#" class="resource-link">Join Community <i class="fas fa-arrow-right"></i></a>
+                <div class="card-actions">
+                    <span class="members">4,100+ members</span>
+                    <a href="#" class="resource-link">Join Community <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </section>
 
         <section class="newsletter" data-aos="fade-up">
             <div class="newsletter-content">
+                <h2 class="section-title">Weekly ML Newsletter</h2>
                 <p>
-                    <strong class="gradient-text">Join 4,100+ machine learning engineers</strong> receiving machine learning lessons, resources, and job updates in their inboxes each week.
+                    <strong class="gradient-text">Join 4,100+ others</strong> getting machine learning insights delivered to their inbox:
                 </p>
+                <ul class="newsletter-benefits">
+                    <li><i class="fas fa-book"></i>ML Lessons & Tutorials</li>
+                    <li><i class="fas fa-code"></i>Coding Resources</li>
+                    <li><i class="fas fa-briefcase"></i>Job Opportunities</li>
+                </ul>
                 <form class="signup-form">
                     <div class="form-container">
                         <div class="input-group">
@@ -301,6 +344,35 @@
         
         // Update every hour
         setInterval(updateSubscriberCount, 3600000);
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const body = document.body;
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('menu-open');
+            mobileMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a, .mobile-menu .get-started-btn').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('menu-open');
+                mobileMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Close mobile menu when resizing to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                menuBtn.classList.remove('menu-open');
+                mobileMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
     </script>
 </body>
 </html> 
