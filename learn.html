@@ -17,37 +17,36 @@
     </div>
     
     <header class="site-header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon"><i class="fas fa-square"></i></div>
-                <div class="logo-icon"><i class="fas fa-circle"></i></div>
-                <div class="logo-icon"><i class="fas fa-play"></i></div>
-            </a>
-            <button class="mobile-menu-btn">
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="nav-links">
-                <a href="learn.html" class="active">Learn</a>
-                <a href="index.html#build">Build</a>
-                <a href="index.html#community">Grow</a>
-                <a href="index.html#faqs">FAQs</a>
-                <a href="index.html#about">About</a>
-                <button class="get-started-btn">Get Started</button>
-            </div>
-        </nav>
-        <div class="mobile-menu">
-            <a href="learn.html" class="active">Learn</a>
-            <a href="index.html#build">Build</a>
-            <a href="index.html#community">Grow</a>
-            <a href="index.html#faqs">FAQs</a>
-            <a href="index.html#about">About</a>
-            <button class="get-started-btn">Get Started</button>
-        </div>
+        <!-- Navigation will be loaded here -->
     </header>
+
+    <script>
+        // Load the navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('.site-header').innerHTML = html;
+                // Set active state for learn page
+                document.querySelectorAll('a[href="learn.html"]').forEach(link => {
+                    link.classList.add('active');
+                });
+                // Update links to include index.html prefix
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.href = 'index.html' + link.getAttribute('href');
+                });
+                // Initialize mobile menu
+                initMobileMenu();
+            });
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.toggle('active');
+                this.classList.toggle('menu-open');
+                document.body.classList.toggle('menu-open');
+            });
+        }
+    </script>
     
     <main class="container roadmap-container">
         <section class="description" data-aos="fade-up">
@@ -113,13 +112,6 @@
         AOS.init({
             duration: 800,
             once: true
-        });
-
-        // Handle mobile menu
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('active');
-            this.classList.toggle('menu-open');
-            document.body.classList.toggle('menu-open');
         });
 
         // Configure marked options

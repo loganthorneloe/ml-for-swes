@@ -912,37 +912,48 @@ body {
     margin: 0 2rem;
 }
 
-.nav-links a {
-    color: var(--accent-color);
+.nav-links a,
+.mobile-menu a {
     text-decoration: none;
+    color: var(--accent-color);
+    margin: 0 1rem;
     font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-    display: flex;
-    align-items: center;
+    transition: color 0.3s ease;
 }
 
-/* Navigation link hover styles */
-.nav-links a[href="#learn"]:hover,
-.mobile-menu a[href="#learn"]:hover {
+/* Active state */
+.nav-links a.active,
+.mobile-menu a.active {
+    color: var(--text-color);
+}
+
+/* Navigation link hover effects */
+.nav-links a[href*="learn"]:hover,
+.mobile-menu a[href*="learn"]:hover {
     color: var(--accent-color-1);
 }
 
-.nav-links a[href="#build"]:hover,
-.mobile-menu a[href="#build"]:hover {
+.nav-links a[href*="build"]:hover,
+.mobile-menu a[href*="build"]:hover {
     color: var(--accent-color-2);
 }
 
-.nav-links a[href="#community"]:hover,
-.mobile-menu a[href="#community"]:hover {
+.nav-links a[href*="grow"]:hover,
+.mobile-menu a[href*="grow"]:hover {
     color: var(--accent-color-3);
 }
 
-.nav-links a[href="#faqs"]:hover,
-.nav-links a[href="#about"]:hover,
-.mobile-menu a[href="#faqs"]:hover,
-.mobile-menu a[href="#about"]:hover {
-    color: var(--hover-color);
+.nav-links a[href*="faqs"]:hover,
+.nav-links a[href*="about"]:hover,
+.mobile-menu a[href*="faqs"]:hover,
+.mobile-menu a[href*="about"]:hover {
+    color: var(--text-color);
+}
+
+/* Mobile menu specific styles */
+.mobile-menu a {
+    display: block;
+    padding: 1rem;
 }
 
 .get-started-btn {

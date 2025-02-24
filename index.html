@@ -17,37 +17,28 @@
     </div>
     
     <header class="site-header">
-        <nav class="nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon"><i class="fas fa-square"></i></div>
-                <div class="logo-icon"><i class="fas fa-circle"></i></div>
-                <div class="logo-icon"><i class="fas fa-play"></i></div>
-            </a>
-            <button class="mobile-menu-btn">
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="nav-links">
-                <a href="learn.html">Learn</a>
-                <a href="#build">Build</a>
-                <a href="#community">Grow</a>
-                <a href="#faqs">FAQs</a>
-                <a href="#about">About</a>
-                <button class="get-started-btn">Get Started</button>
-            </div>
-        </nav>
-        <div class="mobile-menu">
-            <a href="learn.html">Learn</a>
-            <a href="#build">Build</a>
-            <a href="#community">Grow</a>
-            <a href="#faqs">FAQs</a>
-            <a href="#about">About</a>
-            <button class="get-started-btn">Get Started</button>
-        </div>
+        <!-- Navigation will be loaded here -->
     </header>
+
+    <script>
+        // Load the navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('.site-header').innerHTML = html;
+                // Initialize mobile menu after nav is loaded
+                initMobileMenu();
+            });
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.toggle('active');
+                this.classList.toggle('menu-open');
+                document.body.classList.toggle('menu-open');
+            });
+        }
+    </script>
     
     <main class="container">
         <section class="description" data-aos="fade-up">
