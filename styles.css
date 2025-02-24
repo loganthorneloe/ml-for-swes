@@ -1438,4 +1438,241 @@ body {
     .nav-container {
         padding: 0 1rem;
     }
+}
+
+/* Roadmap specific styles */
+.roadmap-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.roadmap-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.roadmap-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.github-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.github-button:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color-1);
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.github-button i {
+    font-size: 1.2rem;
+}
+
+.roadmap-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.roadmap-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.roadmap-intro p {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+}
+
+/* Roadmap content styles */
+.roadmap-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.roadmap-content h2 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+    color: var(--accent-color-1);
+    border-bottom: 2px solid var(--card-border-color);
+    padding-bottom: 0.5rem;
+}
+
+.roadmap-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-color);
+}
+
+.roadmap-content p {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.roadmap-content a {
+    color: var(--accent-color-1);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.roadmap-content a:hover {
+    color: var(--accent-color-2);
+}
+
+.roadmap-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.roadmap-content ul li {
+    position: relative;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.roadmap-content ul li::before {
+    content: '•';
+    color: var(--accent-color-1);
+    position: absolute;
+    left: -1.5rem;
+    font-size: 1.2em;
+}
+
+.roadmap-content blockquote {
+    border-left: 4px solid var(--accent-color-1);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background-color: rgba(235, 87, 87, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.roadmap-content blockquote p {
+    margin: 0;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.roadmap-content details {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+}
+
+.roadmap-content summary {
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.roadmap-content summary:hover {
+    color: var(--accent-color-1);
+}
+
+.roadmap-content details[open] summary {
+    margin-bottom: 1rem;
+    color: var(--accent-color-1);
+}
+
+/* Emoji and icon styles */
+.roadmap-content .emoji {
+    font-style: normal;
+    margin-right: 0.5rem;
+}
+
+/* Additional mobile styles for roadmap */
+@media (max-width: 768px) {
+    .roadmap-container {
+        padding: 1rem;
+    }
+
+    .roadmap-intro h1 {
+        font-size: 2rem;
+    }
+
+    .roadmap-intro p {
+        font-size: 1.1rem;
+    }
+
+    .roadmap-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .roadmap-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .roadmap-content {
+        font-size: 1rem;
+    }
+
+    .github-stats {
+        width: 100%;
+    }
+}
+
+/* Additional dark mode adjustments for roadmap */
+@media (prefers-color-scheme: dark) {
+    .roadmap-content blockquote {
+        background-color: rgba(235, 87, 87, 0.1);
+    }
+
+    .github-button {
+        background-color: var(--background-color);
+        border-color: var(--card-border-color);
+    }
+}
+
+/* Error message styles */
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    background-color: rgba(235, 87, 87, 0.05);
+}
+
+.error-message p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.error-message a {
+    color: var(--accent-color-1);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.error-message a:hover {
+    color: var(--accent-color-2);
 } 
