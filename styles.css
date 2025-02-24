@@ -151,16 +151,21 @@ body {
 .resource-card:nth-child(1) .card-icon,
 .resource-card:nth-child(1) .resource-link {
     color: var(--accent-color-1);
+    transition: transform 0.3s ease;
 }
 
 .resource-card:nth-child(2) .card-icon,
 .resource-card:nth-child(2) .resource-link {
     color: var(--accent-color-2);
+    transition: transform 0.3s ease;
 }
 
 .resource-card:nth-child(3) .card-icon {
     color: var(--accent-color-3);
     transform: rotate(-90deg);
+    transform-origin: center;
+    transition: all 0.3s ease;
+    will-change: transform;
 }
 
 .resource-card:nth-child(3) .resource-link {
@@ -194,8 +199,8 @@ body {
     transform: rotate(-90deg) scale(1.1);
 }
 
+/* Remove the general card icon hover since we handle it specifically above */
 .resource-card:hover .card-icon {
-    transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
@@ -674,4 +679,19 @@ body {
 
 .mobile-fade-in {
     animation: mobileFadeIn 0.8s ease-out forwards;
+}
+
+/* Card hover effects */
+.resource-card:nth-child(1):hover .card-icon,
+.resource-card:nth-child(2):hover .card-icon {
+    transform: scale(1.1);
+}
+
+.resource-card:nth-child(3):hover .card-icon {
+    transform: rotate(-90deg) scale(1.1);
+}
+
+/* Remove the general hover since we handle each specifically above */
+.resource-card:hover .card-icon {
+    transition: transform 0.3s ease;
 } 
