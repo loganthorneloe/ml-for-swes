@@ -892,9 +892,34 @@ body {
     align-items: center;
 }
 
+/* Navigation link hover styles */
+.nav-links a[href="#learn"]:hover,
+.mobile-menu a[href="#learn"]:hover {
+    color: var(--accent-color-1);
+}
+
+.nav-links a[href="#build"]:hover,
+.mobile-menu a[href="#build"]:hover {
+    color: var(--accent-color-2);
+}
+
+.nav-links a[href="#community"]:hover,
+.mobile-menu a[href="#community"]:hover {
+    color: var(--accent-color-3);
+}
+
+.nav-links a[href="#faqs"]:hover,
+.nav-links a[href="#about"]:hover,
+.mobile-menu a[href="#faqs"]:hover,
+.mobile-menu a[href="#about"]:hover {
+    color: var(--hover-color);
+}
+
 .get-started-btn {
-    background: var(--text-color);
-    color: var(--background-color);
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    color: white;
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
@@ -908,7 +933,7 @@ body {
 
 .get-started-btn:hover {
     transform: translateY(-1px);
-    opacity: 0.9;
+    filter: brightness(1.1);
 }
 
 @media (max-width: 768px) {
