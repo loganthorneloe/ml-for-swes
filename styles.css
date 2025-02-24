@@ -553,11 +553,12 @@ body {
 .footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: calc(var(--spacing-unit) * 2);
     padding: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 1) 0;
     border-top: 1px solid var(--card-border-color);
     margin-top: calc(var(--spacing-unit) * 2);
+    position: relative;
 }
 
 .footer-content {
@@ -573,9 +574,10 @@ body {
 }
 
 .social-links {
+    position: absolute;
+    left: 0;
     display: flex;
-    gap: calc(var(--spacing-unit) * 1.5);
-    margin: 0;
+    gap: 1rem;
 }
 
 .social-icon {
@@ -583,6 +585,7 @@ body {
     font-size: 1.25rem;
     text-decoration: none;
     transition: all 0.2s ease;
+    padding: 0.25rem;
 }
 
 .social-icon:hover {
@@ -609,9 +612,11 @@ body {
 }
 
 .copyright {
+    position: absolute;
+    right: 0;
     color: var(--accent-color);
+    opacity: 0.7;
     font-size: 0.9rem;
-    margin: 0;
 }
 
 @keyframes gradient {
@@ -668,10 +673,17 @@ body {
         flex-direction: column;
         text-align: center;
         gap: calc(var(--spacing-unit) * 1.5);
+        position: static;
     }
 
     .social-links {
+        position: static;
         order: 1;
+        justify-content: center;
+    }
+
+    .social-icon {
+        padding: 0.25rem;
     }
 
     .footer-links {
@@ -679,7 +691,9 @@ body {
     }
 
     .copyright {
+        position: static;
         order: 3;
+        opacity: 0.7;
     }
 
     .faqs h2 {
