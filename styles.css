@@ -615,4 +615,19 @@ body {
 
 .resource-card:nth-child(3) .card-features i {
     color: var(--accent-color-3);
+}
+
+@keyframes mobileFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-fade-in {
+    animation: mobileFadeIn 0.8s ease-out forwards;
 } 

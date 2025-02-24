@@ -200,11 +200,22 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        // Handle animations differently for mobile
+        if (window.innerWidth < 768) {
+            // Disable AOS on mobile
+            document.querySelectorAll('[data-aos]').forEach(element => {
+                element.removeAttribute('data-aos');
+                element.removeAttribute('data-aos-delay');
+                // Add a class for immediate fade in
+                element.classList.add('mobile-fade-in');
+            });
+        } else {
+            // Initialize AOS only on desktop
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+        }
 
         // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(button => {
