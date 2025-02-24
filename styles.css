@@ -138,11 +138,13 @@ body {
     text-decoration: none;
     font-weight: 500;
     margin-top: auto;
+    font-size: 0.9rem;
 }
 
 .resource-link i {
     margin-left: 0.5rem;
     transition: transform 0.2s ease;
+    font-size: 0.8rem;
 }
 
 /* Card-specific styles */
@@ -203,7 +205,7 @@ body {
     margin: 0 auto;
     text-align: center;
     margin-bottom: 4rem;
-    padding: 4rem 0;
+    padding: 3rem 0;
     position: relative;
 }
 
@@ -550,6 +552,33 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .description {
+        margin: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 2) 0;
+    }
+
+    .description p {
+        font-size: 1.15rem;
+        margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .description p:last-child {
+        margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .resources {
+        margin-top: 0;
+    }
+
+    .newsletter {
+        margin-bottom: 2rem;
+        padding: 1.5rem 0;
+    }
+
+    .newsletter p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
     .newsletter h2 {
         font-size: 2.5rem;
     }
@@ -562,6 +591,10 @@ body {
     .submit-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .resource-card .card-features {
+        display: none !important;
     }
 
     .footer {
