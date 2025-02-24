@@ -204,7 +204,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
     padding: 3rem 0;
     position: relative;
 }
@@ -404,6 +404,7 @@ body {
 .faqs {
     max-width: 800px;
     margin: 0 auto calc(var(--spacing-unit) * 6);
+    padding-top: 6rem;
 }
 
 .faqs h2 {
@@ -570,7 +571,7 @@ body {
     }
 
     .newsletter {
-        margin-bottom: 2rem;
+        margin-bottom: 0;
         padding: 1.5rem 0;
     }
 
@@ -613,6 +614,11 @@ body {
 
     .copyright {
         order: 3;
+    }
+
+    .faqs h2 {
+        margin-bottom: calc(var(--spacing-unit) * 1.5);
+        font-size: 1.75rem;
     }
 }
 
