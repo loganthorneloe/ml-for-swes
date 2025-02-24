@@ -113,7 +113,8 @@ body {
     border-color: var(--accent-color-2);
 }
 
-.resource-card[href$="#grow"]:hover {
+.resource-card[href$="#grow"]:hover,
+.resource-card[href$="societysbackend.com"]:hover {
     border-color: var(--accent-color-3);
 }
 
@@ -146,7 +147,8 @@ body {
     transition: transform 0.3s ease;
 }
 
-.resource-card[href$="#grow"] .card-icon {
+.resource-card[href$="#grow"] .card-icon,
+.resource-card[href$="societysbackend.com"] .card-icon {
     color: var(--accent-color-3);
     transform: rotate(-90deg);
     transform-origin: center;
@@ -154,7 +156,8 @@ body {
     will-change: transform;
 }
 
-.resource-card[href$="#grow"] .resource-link {
+.resource-card[href$="#grow"] .resource-link,
+.resource-card[href$="societysbackend.com"] .resource-link {
     color: var(--accent-color-3);
 }
 
@@ -162,7 +165,8 @@ body {
     transform: translateX(4px);
 }
 
-.resource-card[href$="#grow"]:hover .card-icon {
+.resource-card[href$="#grow"]:hover .card-icon,
+.resource-card[href$="societysbackend.com"]:hover .card-icon {
     transform: rotate(-90deg) scale(1.1);
 }
 
@@ -797,7 +801,8 @@ body {
     color: var(--accent-color-2);
 }
 
-.resource-card[href$="#grow"] .card-features i {
+.resource-card[href$="#grow"] .card-features i,
+.resource-card[href$="societysbackend.com"] .card-features i {
     color: var(--accent-color-3);
 }
 
@@ -822,7 +827,8 @@ body {
     transform: scale(1.1);
 }
 
-.resource-card[href$="#grow"]:hover .card-icon {
+.resource-card[href$="#grow"]:hover .card-icon,
+.resource-card[href$="societysbackend.com"]:hover .card-icon {
     transform: rotate(-90deg) scale(1.1);
 }
 
@@ -943,7 +949,9 @@ body {
 }
 
 .nav-links a[href*="grow"]:hover,
-.mobile-menu a[href*="grow"]:hover {
+.nav-links a[href*="societysbackend"]:hover,
+.mobile-menu a[href*="grow"]:hover,
+.mobile-menu a[href*="societysbackend"]:hover {
     color: var(--accent-color-3);
 }
 
