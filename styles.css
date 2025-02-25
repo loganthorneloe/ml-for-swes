@@ -122,7 +122,6 @@ body {
     display: inline-flex;
     align-items: center;
     font-weight: 500;
-    margin-top: auto;
     font-size: 0.9rem;
 }
 
@@ -198,6 +197,103 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     flex-grow: 1;
+}
+
+/* Why Guide Section */
+.why-guide {
+    max-width: 1000px;
+    margin: 0 auto calc(var(--spacing-unit) * 8) auto;
+    text-align: center;
+}
+
+.why-guide .section-title {
+    font-size: 2rem;
+    margin-bottom: calc(var(--spacing-unit) * 4);
+    color: var(--text-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Make the last two cards centered in their own row */
+    .feature-card:nth-last-child(-n+2) {
+        grid-column: span 1;
+    }
+    
+    .feature-card:nth-last-child(2) {
+        transform: translateX(50%);
+    }
+}
+
+.feature-card {
+    padding: calc(var(--spacing-unit) * 2);
+    border: 1px solid var(--card-border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: var(--background-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--card-shadow);
+    border-color: var(--accent-color-2);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: calc(var(--spacing-unit));
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--accent-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .why-guide {
+        margin-bottom: calc(var(--spacing-unit) * 4);
+    }
+
+    .why-guide .section-title {
+        font-size: 1.75rem;
+        margin-bottom: calc(var(--spacing-unit) * 3);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 1.5);
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        padding: calc(var(--spacing-unit) * 1.5);
+    }
+    
+    /* Reset the desktop-specific positioning */
+    .feature-card:nth-last-child(2) {
+        transform: none;
+    }
 }
 
 /* Newsletter Section */
@@ -771,39 +867,22 @@ body {
 
 /* Card Features */
 .card-features {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin: 1rem 0 1.5rem;
-}
-
-.card-features span {
-    display: flex;
-    align-items: center;
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    line-height: 1.2;
-}
-
-.card-features i {
-    font-size: 0.8rem;
-    margin-right: 0.75rem;
-    flex-shrink: 0;
+    display: none;
 }
 
 /* Match checkmark colors to card colors */
 .resource-card[href="learn.html"] .card-features i,
-.resource-card[href$="#learn"] .card-features i {
-    color: var(--accent-color-1);
-}
-
-.resource-card[href$="#build"] .card-features i {
-    color: var(--accent-color-2);
-}
-
+.resource-card[href$="#learn"] .card-features i,
+.resource-card[href$="#build"] .card-features i,
 .resource-card[href$="#grow"] .card-features i,
 .resource-card[href$="societysbackend.com"] .card-features i {
-    color: var(--accent-color-3);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .card-features {
+        display: none !important;
+    }
 }
 
 @keyframes mobileFadeIn {
@@ -1051,19 +1130,16 @@ body {
 /* Updated Card Styles */
 .card-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-top: 1.5rem;
 }
 
+/* Remove unused styles */
 .time-estimate,
 .difficulty,
 .members {
-    font-size: 0.875rem;
-    color: var(--accent-color);
-    background: var(--card-border-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
+    display: none;
 }
 
 /* Newsletter Benefits */
