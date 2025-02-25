@@ -827,6 +827,10 @@ body {
     transform: scale(1.1);
 }
 
+.resource-card[href$="#build"]:hover .card-icon {
+    transform: scale(1.1);
+}
+
 .resource-card[href$="#grow"]:hover .card-icon,
 .resource-card[href$="societysbackend.com"]:hover .card-icon {
     transform: rotate(-90deg) scale(1.1);
@@ -955,10 +959,11 @@ body {
     color: var(--accent-color-3);
 }
 
+/* About and FAQs hover effects */
+.nav-links a[href*="github.com/loganthorneloe"]:hover,
+.mobile-menu a[href*="github.com/loganthorneloe"]:hover,
 .nav-links a[href*="faqs"]:hover,
-.nav-links a[href*="about"]:hover,
-.mobile-menu a[href*="faqs"]:hover,
-.mobile-menu a[href*="about"]:hover {
+.mobile-menu a[href*="faqs"]:hover {
     color: var(--text-color);
 }
 
