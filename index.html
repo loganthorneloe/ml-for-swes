@@ -95,7 +95,7 @@
         }
         
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             position: relative;
         }
         
@@ -103,27 +103,98 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            border-bottom: 1px solid var(--card-border-color);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            margin-bottom: 2.5rem;
             cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
         }
         
-        .section-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
+        .section-learn .section-item {
+            border-left-color: var(--accent-color-1);
+        }
+        
+        .section-build .section-item {
+            border-left-color: var(--accent-color-2);
+        }
+        
+        .section-grow .section-item {
+            border-left-color: var(--accent-color-3);
+        }
+        
+        .section-item:hover {
+            background: transparent;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.9;
         }
         
         .section-header {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: none;
+        }
+        
+        .section-learn .section-header::after,
+        .section-build .section-header::after,
+        .section-grow .section-header::after {
+            background-color: transparent;
+        }
+        
+        .section-item:hover .section-header::after {
+            width: 0;
         }
         
         .section-icon {
-            color: var(--accent-color-1);
             display: flex;
+            transition: transform 0.2s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-icon::after {
+            content: "";
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            width: 2px;
+            height: 0;
+            transform: translateX(-50%);
+            transition: height 0.3s ease, opacity 0.2s ease;
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .section-learn .section-icon::after {
+            background-color: var(--accent-color-1);
+            box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+        }
+        
+        .section-build .section-icon::after {
+            background-color: var(--accent-color-2);
+            box-shadow: 0 0 8px rgba(164, 128, 255, 0.3);
+        }
+        
+        .section-grow .section-icon::after {
+            background-color: var(--accent-color-3);
+            box-shadow: 0 0 8px rgba(78, 235, 197, 0.3);
+        }
+        
+        .section-item:hover .section-icon::after {
+            height: 4rem;
+            opacity: 0.8;
+        }
+        
+        .section-item:hover .section-icon {
+            transform: scale(1.1);
         }
         
         /* Assign specific classes to each section */
@@ -155,6 +226,8 @@
             margin-bottom: 0.75rem;
             font-family: var(--sans-font);
             letter-spacing: 0.01em;
+            padding-left: 2.5rem;
+            margin-top: 0.25rem;
         }
         
         .action-link {
@@ -166,86 +239,43 @@
             transition: all 0.2s;
             font-family: var(--sans-font);
             letter-spacing: 0.02em;
+            color: var(--light-text);
+            margin-top: 0.5rem;
+            padding-left: 2.5rem;
         }
         
-        /* Section-specific link colors */
-        .section-learn .action-link {
+        .action-link:hover {
             color: white;
         }
         
-        .section-build .action-link {
-            color: white;
-        }
-        
-        .section-grow .action-link {
-            color: white;
-        }
-        
-        /* Base highlight effect for all sections */
-        .section-item:hover .section-header h2,
-        .section-wrapper:hover .section-item .section-header h2 {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .section-item:hover .section-header h2::after,
-        .section-wrapper:hover .section-item .section-header h2::after {
-            content: "";
-            position: absolute;
-            bottom: 5%;
-            left: -3px;
-            width: calc(100% + 6px);
-            height: 60%;
-            z-index: -1;
-            transition: all 0.3s ease;
-            transform: rotate(-0.5deg);
-            opacity: 0.8;
-        }
-        
-        /* Specific colors for each section */
-        .section-learn .section-item:hover .section-header h2::after,
-        .section-learn .section-wrapper:hover .section-item .section-header h2::after {
-            background-color: var(--accent-color-1);
-            box-shadow: 0 0 15px rgba(255, 107, 107, 0.2);
-        }
-        
-        .section-build .section-item:hover .section-header h2::after,
-        .section-build .section-wrapper:hover .section-item .section-header h2::after {
-            background-color: var(--accent-color-2);
-            box-shadow: 0 0 15px rgba(164, 128, 255, 0.2);
-        }
-        
-        .section-grow .section-item:hover .section-header h2::after,
-        .section-grow .section-wrapper:hover .section-item .section-header h2::after {
-            background-color: var(--accent-color-3);
-            box-shadow: 0 0 15px rgba(78, 235, 197, 0.2);
-        }
-        
-        .action-link:hover i,
-        .section-wrapper:hover .action-link i {
+        .action-link:hover i {
             transform: translateX(3px);
             transition: transform 0.2s ease;
         }
         
         .social-links-container {
             margin: 5rem 0 3rem;
+            border: none;
             border-top: 1px solid var(--card-border-color);
-            padding-top: 2rem;
+            border-radius: 0;
+            padding: 2rem 0 0 0;
         }
         
         .social-links {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 1.8rem;
+            flex-wrap: wrap;
         }
         
         .social-links-text {
             font-family: var(--sans-font);
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-right: 1.5rem;
+            color: var(--light-text);
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            width: 100%;
         }
         
         .social-links a {
@@ -255,7 +285,7 @@
         
         .social-links a:hover {
             opacity: 1;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
         
         .footer {
@@ -277,11 +307,28 @@
             }
             
             .intro p {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+            }
+            
+            .section-description,
+            .action-link {
+                padding-left: 2rem;
+            }
+            
+            .section-header::after {
+                width: 0;
+            }
+            
+            .section-item:hover .section-header::after {
+                width: 0;
+            }
+            
+            .section-item:hover .section-icon::after {
+                height: 2.5rem;
             }
             
             .newsletter-form {
@@ -296,13 +343,12 @@
             }
             
             .social-links {
-                flex-direction: column;
-                gap: 1rem;
+                flex-direction: row;
+                gap: 2rem;
+                justify-content: center;
             }
             
             .social-links-text {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
                 text-align: center;
             }
         }
@@ -335,7 +381,7 @@
         
         .signature-link:hover {
             opacity: 1;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
         
         .signature-link:hover::after {
@@ -376,9 +422,11 @@
         
         /* Newsletter styles */
         .newsletter {
-            margin: 6rem 0 4rem;
+            margin: 5rem 0 3rem;
+            border: none;
             border-top: 1px solid var(--card-border-color);
-            padding-top: 2rem;
+            border-radius: 0;
+            padding: 2rem 0 0 0;
         }
         
         .newsletter-form {
@@ -386,48 +434,51 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            gap: 1rem;
         }
         
         .newsletter-label {
             font-family: var(--sans-font);
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--light-text);
             margin-right: 1rem;
+            width: 100%;
+            margin-bottom: 0.5rem;
         }
         
         .newsletter-input-group {
             display: flex;
             flex: 1;
-            max-width: 500px;
+            max-width: 100%;
         }
         
         .newsletter-input {
             flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border-color);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--card-border-color);
             color: var(--text-color);
-            padding: 0.6rem 1rem;
+            padding: 0.6rem 0;
             font-family: var(--sans-font);
             font-size: 0.9rem;
-            border-radius: 4px 0 0 4px;
+            border-radius: 0;
             transition: all 0.2s ease;
         }
         
         .newsletter-input:focus {
             outline: none;
-            background: rgba(255, 255, 255, 0.1);
             border-color: var(--accent-color-2);
         }
         
         .newsletter-button {
-            background: var(--accent-color-2);
+            background: transparent;
             color: white;
             border: none;
             padding: 0.6rem 1.2rem;
             font-family: var(--sans-font);
             font-size: 0.9rem;
             font-weight: 500;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -436,8 +487,8 @@
         }
         
         .newsletter-button:hover {
-            background: #b694ff;
-            transform: translateY(-1px);
+            background: transparent;
+            color: var(--accent-color-2);
         }
         
         @media (max-width: 768px) {
@@ -561,7 +612,7 @@
 
         <section class="newsletter">
             <form class="newsletter-form">
-                <label for="email" class="newsletter-label">Get ML resources first</label>
+                <label for="email" class="newsletter-label">ML resources in your inbox</label>
                 <div class="newsletter-input-group">
                     <input type="email" id="email" name="email" placeholder="Enter your email" required class="newsletter-input">
                     <button type="submit" class="newsletter-button">
@@ -573,7 +624,7 @@
 
         <section class="social-links-container">
             <div class="social-links">
-                <span class="social-links-text">Have a question? Connect with me here. Make sure to introduce yourself</span>
+                <span class="social-links-text">Connect with me</span>
                 <a href="https://github.com/loganthorneloe" target="_blank" aria-label="GitHub"><i data-lucide="github" class="icon-lg"></i></a>
                 <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="icon-lg"></i></a>
                 <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-lg"></i></a>
