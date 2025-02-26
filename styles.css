@@ -109,7 +109,7 @@ body {
     border-color: var(--accent-color-1);
 }
 
-.resource-card[href$="#build"]:hover {
+.resource-card[href="build.html"]:hover {
     border-color: var(--accent-color-2);
 }
 
@@ -137,24 +137,15 @@ body {
 .resource-card[href$="#learn"] .card-icon,
 .resource-card[href$="#learn"] .resource-link {
     color: var(--accent-color-1);
-    transition: transform 0.3s ease;
 }
 
-.resource-card[href$="#build"] .card-icon,
-.resource-card[href$="#build"] .resource-link {
+.resource-card[href="build.html"] .card-icon,
+.resource-card[href="build.html"] .resource-link {
     color: var(--accent-color-2);
-    transition: transform 0.3s ease;
 }
 
 .resource-card[href$="#grow"] .card-icon,
-.resource-card[href$="societysbackend.com"] .card-icon {
-    color: var(--accent-color-3);
-    transform: rotate(-90deg);
-    transform-origin: center;
-    transition: all 0.3s ease;
-    will-change: transform;
-}
-
+.resource-card[href$="societysbackend.com"] .card-icon,
 .resource-card[href$="#grow"] .resource-link,
 .resource-card[href$="societysbackend.com"] .resource-link {
     color: var(--accent-color-3);
@@ -1988,4 +1979,57 @@ body {
 
 .error-message a:hover {
     color: var(--accent-color-2);
+}
+
+.build-page .newsletter {
+    background: var(--background-color);
+    padding: calc(var(--spacing-unit) * 4) 0;
+    margin-bottom: calc(var(--spacing-unit) * 8);
+    position: relative;
+}
+
+.build-page .newsletter::before {
+    display: none;
+}
+
+/* Build page specific styles */
+.build-page .description p strong.gradient-text {
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+.build-page .resource-card {
+    border-color: rgba(140, 82, 255, 0.1);
+}
+
+.build-page .resource-card:hover {
+    border-color: var(--accent-color-2);
+}
+
+.build-page .resource-card .card-icon {
+    color: var(--accent-color-2);
+}
+
+.build-page .resource-card .resource-link {
+    color: var(--accent-color-2);
+}
+
+.build-page .submit-btn {
+    background: linear-gradient(135deg, var(--accent-color-2), #a881ff, #6638cc);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+/* Keep the newsletter gradient text in original colors */
+.build-page .newsletter p strong.gradient-text {
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
 } 
