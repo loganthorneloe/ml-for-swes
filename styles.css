@@ -118,15 +118,15 @@ a {
 }
 
 .section-learn .section-item {
-    border-bottom: 3px dotted var(--accent-color-1);
+    border-bottom: 1.5px dashed var(--accent-color-1);
 }
 
 .section-build .section-item {
-    border-bottom: 3px dotted var(--accent-color-2);
+    border-bottom: 1.5px dashed var(--accent-color-2);
 }
 
 .section-grow .section-item {
-    border-bottom: 3px dotted var(--accent-color-3);
+    border-bottom: 1.5px dashed var(--accent-color-3);
 }
 
 .section-item:hover {
@@ -137,19 +137,19 @@ a {
 .section-learn .section-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 107, 107, 0.15);
-    border-bottom: 3px solid var(--accent-color-1);
+    border-bottom: 1.5px solid var(--accent-color-1);
 }
 
 .section-build .section-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
-    border-bottom: 3px solid var(--accent-color-2);
+    border-bottom: 1.5px solid var(--accent-color-2);
 }
 
 .section-grow .section-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(78, 235, 197, 0.15);
-    border-bottom: 3px solid var(--accent-color-3);
+    border-bottom: 1.5px solid var(--accent-color-3);
 }
 
 .section-item:hover .section-title {
@@ -380,7 +380,7 @@ a {
 .newsletter-input {
     background-color: transparent;
     border: none;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    border-bottom: 1.5px dashed rgba(255, 255, 255, 0.5);
     color: var(--text-color);
     font-family: var(--sans-font);
     font-size: 0.9rem;
@@ -391,12 +391,12 @@ a {
 
 .newsletter-input:hover {
     transform: translateY(-3px);
-    border-bottom: 1px solid white;
+    border-bottom: 1.5px solid white;
 }
 
 .newsletter-input:focus {
     outline: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1.5px solid white;
     transform: translateY(-3px);
 }
 
@@ -412,13 +412,13 @@ a {
     transition: transform 0.2s ease;
     letter-spacing: 0.02em;
     text-decoration: none;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    border-bottom: 1.5px dashed rgba(255, 255, 255, 0.5);
 }
 
 .newsletter-button:hover {
     background-color: transparent;
     transform: translateY(-3px);
-    border-bottom: 1px solid white;
+    border-bottom: 1.5px solid white;
 }
 
 .footer {
@@ -444,7 +444,7 @@ a {
     font-size: 1.4rem;
     color: white;
     text-decoration: none;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    border-bottom: 1.5px dashed rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
     position: relative;
     font-family: var(--heading-font);
@@ -456,7 +456,7 @@ a {
 
 .signature-link:hover {
     transform: translateY(-3px);
-    border-bottom: 1px solid white;
+    border-bottom: 1.5px solid white;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -511,17 +511,17 @@ a {
 
 .section-learn #learn-section.hover-effect .section-item {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 107, 107, 0.15);
-    border-bottom: 3px solid var(--accent-color-1);
+    border-bottom: 1.5px solid var(--accent-color-1);
 }
 
 .section-build #build-section.hover-effect .section-item {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
-    border-bottom: 3px solid var(--accent-color-2);
+    border-bottom: 1.5px solid var(--accent-color-2);
 }
 
 .section-grow #grow-section.hover-effect .section-item {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(78, 235, 197, 0.15);
-    border-bottom: 3px solid var(--accent-color-3);
+    border-bottom: 1.5px solid var(--accent-color-3);
 }
 
 .section-wrapper.hover-effect .section-title {
