@@ -301,7 +301,7 @@ a {
 }
 
 .social-links-container {
-    margin: 1.5rem 0 3rem;
+    margin: 2rem 0 2rem;
     border: none;
     padding: 0;
 }
@@ -346,6 +346,74 @@ a {
     display: flex;
     gap: 1.8rem;
     align-items: center;
+}
+
+/* Newsletter styles */
+.newsletter-container {
+    margin: 3rem 0 1rem;
+    padding: 0;
+}
+
+.newsletter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.newsletter-text {
+    font-family: var(--heading-font);
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.newsletter-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    color: var(--text-color);
+    font-family: var(--sans-font);
+    font-size: 0.9rem;
+    padding: 0.6rem 0.5rem;
+    flex-grow: 1;
+    transition: all 0.2s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-bottom: 1px solid white;
+}
+
+.newsletter-button {
+    background-color: transparent;
+    color: white;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.6rem 0;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-button:hover {
+    background-color: transparent;
+    transform: translateY(-3px);
+    border-bottom: 1px solid white;
 }
 
 .footer {
@@ -546,5 +614,30 @@ a {
     
     .footer {
         margin-top: 2.5rem;
+    }
+    
+    .newsletter-container {
+        margin: 2rem 0;
+    }
+    
+    .newsletter-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.2rem;
+    }
+    
+    .newsletter-form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .newsletter-input {
+        padding: 0.5rem 0.2rem;
+    }
+    
+    .newsletter-button {
+        padding: 0.5rem 0;
+        margin-top: 0.8rem;
     }
 } 
