@@ -30,9 +30,9 @@
     <main class="container">
         <div class="logo-row">
             <div class="icons">
-                <i data-lucide="square" class="icon-lg" style="color:var(--accent-color-1)"></i>
-                <i data-lucide="circle" class="icon-lg" style="color:var(--accent-color-2)"></i>
-                <i data-lucide="play" class="icon-lg" style="color:var(--accent-color-3)"></i>
+                <i id="logo-square" data-lucide="square" class="icon-lg" style="color:var(--accent-color-1)"></i>
+                <i id="logo-circle" data-lucide="circle" class="icon-lg" style="color:var(--accent-color-2)"></i>
+                <i id="logo-play" data-lucide="play" class="icon-lg" style="color:var(--accent-color-3)"></i>
             </div>
         </div>
         
@@ -53,7 +53,7 @@
         </section>
 
         <section class="section section-learn">
-            <a href="learn.html" class="section-wrapper">
+            <a href="learn.html" class="section-wrapper" id="learn-section">
                 <div class="section-item">
                     <div class="section-header">
                         <i data-lucide="square" class="section-icon icon-xl" style="color:var(--accent-color-1)"></i>
@@ -68,7 +68,7 @@
         </section>
 
         <section class="section section-build">
-            <a href="build.html" class="section-wrapper">
+            <a href="build.html" class="section-wrapper" id="build-section">
                 <div class="section-item">
                     <div class="section-header">
                         <i data-lucide="circle" class="section-icon icon-xl" style="color:var(--accent-color-2)"></i>
@@ -83,7 +83,7 @@
         </section>
 
         <section class="section section-grow">
-            <a href="https://societysbackend.com" target="_blank" class="section-wrapper">
+            <a href="https://societysbackend.com" target="_blank" class="section-wrapper" id="grow-section">
                 <div class="section-item">
                     <div class="section-header">
                         <i data-lucide="play" class="section-icon icon-xl" style="color:var(--accent-color-3)"></i>
@@ -117,6 +117,42 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
+
+            // Logo-to-card hover effect
+            const logoSquare = document.getElementById('logo-square');
+            const logoCircle = document.getElementById('logo-circle');
+            const logoPlay = document.getElementById('logo-play');
+            
+            const learnSection = document.getElementById('learn-section');
+            const buildSection = document.getElementById('build-section');
+            const growSection = document.getElementById('grow-section');
+            
+            // Add hover effect for square (Learn)
+            logoSquare.addEventListener('mouseenter', function() {
+                learnSection.classList.add('hover-effect');
+            });
+            
+            logoSquare.addEventListener('mouseleave', function() {
+                learnSection.classList.remove('hover-effect');
+            });
+            
+            // Add hover effect for circle (Build)
+            logoCircle.addEventListener('mouseenter', function() {
+                buildSection.classList.add('hover-effect');
+            });
+            
+            logoCircle.addEventListener('mouseleave', function() {
+                buildSection.classList.remove('hover-effect');
+            });
+            
+            // Add hover effect for play (Grow)
+            logoPlay.addEventListener('mouseenter', function() {
+                growSection.classList.add('hover-effect');
+            });
+            
+            logoPlay.addEventListener('mouseleave', function() {
+                growSection.classList.remove('hover-effect');
+            });
         });
     </script>
 </body>

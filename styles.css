@@ -48,6 +48,17 @@ a {
     gap: 0.5rem;
 }
 
+/* Logo icon hover effects */
+.icons [data-lucide] {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icons [data-lucide]:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
 .intro {
     margin-bottom: 2.5rem;
 }
@@ -417,6 +428,55 @@ a {
     font-family: var(--heading-font);
     font-weight: 400;
     letter-spacing: 0.01em;
+}
+
+/* Hover effect for sections triggered by logo hover */
+.section-wrapper.hover-effect .section-item {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.section-learn #learn-section.hover-effect .section-item {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 107, 107, 0.15);
+    border-bottom: 3px solid var(--accent-color-1);
+}
+
+.section-build #build-section.hover-effect .section-item {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
+    border-bottom: 3px solid var(--accent-color-2);
+}
+
+.section-grow #grow-section.hover-effect .section-item {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(78, 235, 197, 0.15);
+    border-bottom: 3px solid var(--accent-color-3);
+}
+
+.section-wrapper.hover-effect .section-title {
+    color: white;
+}
+
+.section-wrapper.hover-effect .section-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section-learn #learn-section.hover-effect .action-link,
+.section-build #build-section.hover-effect .action-link,
+.section-grow #grow-section.hover-effect .action-link {
+    color: white;
+}
+
+.section-wrapper.hover-effect .action-link i {
+    transform: translateX(5px);
+}
+
+.section-wrapper.hover-effect .section-icon {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.section-wrapper.hover-effect .section-icon::after {
+    height: 4rem;
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
