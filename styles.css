@@ -155,19 +155,28 @@ body {
     transform: translateX(4px);
 }
 
-.resource-card[href$="#grow"]:hover .card-icon,
-.resource-card[href$="societysbackend.com"]:hover .card-icon {
-    transform: rotate(270deg) scale(1.1);
-}
-
-/* Remove the general card icon hover since we handle it specifically above */
-.resource-card:hover .card-icon {
-    transition: transform 0.3s ease;
-}
-
 .card-icon {
     font-size: 2rem;
     margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Initial state for grow icon */
+.resource-card[href$="#grow"] .card-icon,
+.resource-card[href$="societysbackend.com"] .card-icon {
+    transform: rotate(270deg);
+}
+
+/* Hover effects */
+.resource-card[href="learn.html"]:hover .card-icon,
+.resource-card[href$="#learn"]:hover .card-icon,
+.resource-card[href="build.html"]:hover .card-icon {
+    transform: scale(1.1);
+}
+
+.resource-card[href$="#grow"]:hover .card-icon,
+.resource-card[href$="societysbackend.com"]:hover .card-icon {
+    transform: rotate(270deg) scale(1.1);
 }
 
 .resource-card h2 {
@@ -889,26 +898,6 @@ body {
 
 .mobile-fade-in {
     animation: mobileFadeIn 0.8s ease-out forwards;
-}
-
-/* Card hover effects */
-.resource-card[href="learn.html"]:hover .card-icon,
-.resource-card[href$="#learn"]:hover .card-icon {
-    transform: scale(1.1);
-}
-
-.resource-card[href$="#build"]:hover .card-icon {
-    transform: scale(1.1);
-}
-
-.resource-card[href$="#grow"]:hover .card-icon,
-.resource-card[href$="societysbackend.com"]:hover .card-icon {
-    transform: scale(1.1);
-}
-
-/* Remove the general hover since we handle each specifically above */
-.resource-card:hover .card-icon {
-    transition: transform 0.3s ease;
 }
 
 /* Site Header */
