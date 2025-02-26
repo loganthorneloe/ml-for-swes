@@ -1012,6 +1012,11 @@ body {
 }
 
 /* Navigation link hover effects */
+.nav-links a[href="/"]:hover,
+.mobile-menu a[href="/"]:hover {
+    color: var(--text-color);
+}
+
 .nav-links a[href*="learn"]:hover,
 .mobile-menu a[href*="learn"]:hover {
     color: var(--accent-color-1);
