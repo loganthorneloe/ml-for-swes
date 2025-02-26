@@ -309,7 +309,7 @@ a {
 
 .social-links-text {
     font-family: var(--sans-font);
-    color: var(--light-text);
+    color: white;
     font-size: 0.95rem;
     font-weight: 400;
     margin-bottom: 0;
@@ -318,11 +318,21 @@ a {
 .social-links a {
     opacity: 0.85;
     transition: all 0.2s ease;
+    position: relative;
 }
 
 .social-links a:hover {
     opacity: 1;
     transform: translateY(-1px);
+}
+
+.social-links [data-lucide] {
+    stroke-dasharray: 1 2;
+    transition: all 0.2s ease;
+}
+
+.social-links a:hover [data-lucide] {
+    stroke-dasharray: 0;
 }
 
 .social-icons {
