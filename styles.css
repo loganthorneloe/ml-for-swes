@@ -363,12 +363,11 @@ a {
 }
 
 .newsletter-text {
-    font-family: var(--heading-font);
+    font-family: var(--sans-font);
     color: white;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 400;
     margin-bottom: 0;
-    letter-spacing: 0.02em;
 }
 
 .newsletter-form {
@@ -390,9 +389,15 @@ a {
     transition: all 0.2s ease;
 }
 
+.newsletter-input:hover {
+    transform: translateY(-3px);
+    border-bottom: 1px solid white;
+}
+
 .newsletter-input:focus {
     outline: none;
     border-bottom: 1px solid white;
+    transform: translateY(-3px);
 }
 
 .newsletter-button {
