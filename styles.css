@@ -119,27 +119,23 @@ a {
 }
 
 .section-item:hover {
-    background: rgba(255, 255, 255, 0.03);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .section-learn .section-item:hover {
-    background: rgba(255, 255, 255, 0.03);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 107, 107, 0.15);
     border-bottom: 3px solid var(--accent-color-1);
 }
 
 .section-build .section-item:hover {
-    background: rgba(255, 255, 255, 0.03);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
     border-bottom: 3px solid var(--accent-color-2);
 }
 
 .section-grow .section-item:hover {
-    background: rgba(255, 255, 255, 0.03);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(78, 235, 197, 0.15);
     border-bottom: 3px solid var(--accent-color-3);
