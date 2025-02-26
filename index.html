@@ -254,17 +254,15 @@
         }
         
         .social-links-container {
-            margin: 5rem 0 3rem;
+            margin: 1.5rem 0 3rem;
             border: none;
-            border-top: 1px solid var(--card-border-color);
-            border-radius: 0;
-            padding: 2rem 0 0 0;
+            padding: 0;
         }
         
         .social-links {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;
             gap: 1.8rem;
             flex-wrap: wrap;
         }
@@ -274,8 +272,7 @@
             color: var(--light-text);
             font-size: 0.95rem;
             font-weight: 400;
-            margin-bottom: 1.5rem;
-            width: 100%;
+            margin-bottom: 0;
         }
         
         .social-links a {
@@ -286,6 +283,12 @@
         .social-links a:hover {
             opacity: 1;
             transform: translateY(-1px);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
         }
         
         .footer {
@@ -340,16 +343,32 @@
             .newsletter-input-group {
                 width: 100%;
                 max-width: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            
+            .newsletter-label {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .newsletter-input {
+                width: 100%;
             }
             
             .social-links {
-                flex-direction: row;
-                gap: 2rem;
-                justify-content: center;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
             
             .social-links-text {
-                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            
+            .social-icons {
+                gap: 1.5rem;
             }
         }
         
@@ -441,33 +460,52 @@
             font-family: var(--sans-font);
             font-size: 0.95rem;
             color: var(--light-text);
-            margin-right: 1rem;
-            width: 100%;
-            margin-bottom: 0.5rem;
+            margin-right: 1.5rem;
+            white-space: nowrap;
         }
         
         .newsletter-input-group {
             display: flex;
             flex: 1;
             max-width: 100%;
+            position: relative;
+            align-items: center;
         }
         
         .newsletter-input {
             flex: 1;
             background: transparent;
             border: none;
-            border-bottom: 1px solid var(--card-border-color);
             color: var(--text-color);
             padding: 0.6rem 0;
             font-family: var(--sans-font);
             font-size: 0.9rem;
             border-radius: 0;
             transition: all 0.2s ease;
+            border-bottom: 1px solid var(--card-border-color);
+            background-image: none;
+            background-position: 0 100%;
+            background-size: 100% 0;
+            background-repeat: no-repeat;
         }
         
         .newsletter-input:focus {
             outline: none;
-            border-color: var(--accent-color-2);
+            border-bottom: none;
+            background-image: linear-gradient(90deg, 
+                var(--accent-color-1) 0%, 
+                var(--accent-color-2) 50%, 
+                var(--accent-color-3) 100%);
+            background-size: 100% 2px;
+        }
+        
+        .newsletter-input:hover {
+            border-bottom: none;
+            background-image: linear-gradient(90deg, 
+                var(--accent-color-1) 0%, 
+                var(--accent-color-2) 50%, 
+                var(--accent-color-3) 100%);
+            background-size: 100% 2px;
         }
         
         .newsletter-button {
@@ -484,11 +522,20 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.2s ease;
+            z-index: 1;
+            position: relative;
         }
         
         .newsletter-button:hover {
-            background: transparent;
-            color: var(--accent-color-2);
+            background-image: none;
+            background-size: auto;
+            color: transparent;
+            background: linear-gradient(90deg, 
+                var(--accent-color-1) 0%, 
+                var(--accent-color-2) 50%, 
+                var(--accent-color-3) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
         }
         
         @media (max-width: 768px) {
@@ -612,11 +659,11 @@
 
         <section class="newsletter">
             <form class="newsletter-form">
-                <label for="email" class="newsletter-label">ML resources in your inbox</label>
                 <div class="newsletter-input-group">
+                    <label for="email" class="newsletter-label">Get ML resources first:</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required class="newsletter-input">
                     <button type="submit" class="newsletter-button">
-                        Subscribe <i data-lucide="arrow-right" class="icon-sm"></i>
+                        Subscribe
                     </button>
                 </div>
             </form>
@@ -624,12 +671,14 @@
 
         <section class="social-links-container">
             <div class="social-links">
-                <span class="social-links-text">Connect with me</span>
-                <a href="https://github.com/loganthorneloe" target="_blank" aria-label="GitHub"><i data-lucide="github" class="icon-lg"></i></a>
-                <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="icon-lg"></i></a>
-                <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-lg"></i></a>
-                <a href="#" aria-label="YouTube"><i data-lucide="youtube" class="icon-lg"></i></a>
-                <a href="#" aria-label="Substack"><i data-lucide="bookmark" class="icon-lg"></i></a>
+                <span class="social-links-text">Questions? Reach out in one of these places:</span>
+                <div class="social-icons">
+                    <a href="https://github.com/loganthorneloe" target="_blank" aria-label="GitHub"><i data-lucide="github" class="icon-lg"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="icon-lg"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-lg"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube" class="icon-lg"></i></a>
+                    <a href="#" aria-label="Substack"><i data-lucide="bookmark" class="icon-lg"></i></a>
+                </div>
             </div>
         </section>
 
