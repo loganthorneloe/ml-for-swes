@@ -561,18 +561,34 @@ a {
         font-size: 1.2rem;
     }
     
+    /* Fix for the "free" text appearing larger than surrounding text */
+    .bold-text {
+        font-size: inherit;
+        font-weight: 700;
+    }
+    
+    .section-header {
+        display: flex;
+        align-items: center;
+    }
+    
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        line-height: 1.2;
+    }
+    
+    .url-part {
+        font-size: 1.3rem;
     }
     
     .section-item {
-        padding: 1.2rem;
+        padding: 1.2rem 0;
         margin-bottom: 2rem;
     }
     
     .section-description,
     .action-link {
-        padding-left: 2rem;
+        padding-left: 0;
     }
     
     .action-link {
