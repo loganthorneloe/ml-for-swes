@@ -106,8 +106,6 @@ a {
 .bold-text {
     color: white;
     font-weight: 800;
-    font-size: 1.4rem;
-    letter-spacing: -0.01em;
 }
 
 .standard-text {
