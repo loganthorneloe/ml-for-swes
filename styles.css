@@ -581,6 +581,18 @@ a {
         padding: 1.5rem;
     }
     
+    .logo-row {
+        margin-bottom: 2rem;
+    }
+    
+    .section {
+        margin-bottom: 2rem;
+    }
+    
+    .intro {
+        margin-bottom: 2rem;
+    }
+    
     .intro p {
         font-size: 1.1rem;
     }
