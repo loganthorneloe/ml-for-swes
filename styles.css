@@ -470,6 +470,10 @@ a {
     content: none;
 }
 
+.signature-name {
+    font-size: 1.4rem;
+}
+
 .icon-sm {
     width: 0.85em;
     height: 0.85em;
@@ -571,6 +575,14 @@ a {
     .bold-text {
         font-size: inherit;
         font-weight: 700;
+    }
+    
+    .signature-name {
+        font-size: 1.2rem;
+    }
+    
+    .signature-link {
+        font-size: 1.2rem;
     }
     
     .section-header {
