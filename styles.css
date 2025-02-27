@@ -1,6 +1,5 @@
 :root {
     --heading-font: 'Playfair Display', serif;
-    --body-font: 'Playfair Display', serif;
     --sans-font: 'DM Sans', sans-serif;
     --accent-color-1: #a480ff;
     --accent-color-2: #40E0D0;
@@ -18,7 +17,7 @@
 }
 
 body {
-    font-family: var(--body-font);
+    font-family: var(--heading-font);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background);
@@ -200,14 +199,11 @@ a {
     position: relative;
 }
 
-.section-header::after {
-    content: none;
-}
-
+/* Remove unused styles */
 .section-learn .section-header::after,
 .section-build .section-header::after,
 .section-grow .section-header::after {
-    background-color: transparent;
+    display: none;
 }
 
 .section-item:hover .section-header::after {
@@ -256,6 +252,7 @@ a {
     opacity: 0.8;
 }
 
+/* Consolidate hover effects */
 .section-item:hover .section-icon,
 .section-wrapper.hover-effect .section-icon {
     transform: scale(1.1);
@@ -532,25 +529,16 @@ a {
     letter-spacing: 0.01em;
 }
 
-/* Hover effect for sections triggered by logo hover */
+/* Remove redundant hover effect styles */
 .section-wrapper.hover-effect .section-item {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-.section-learn #learn-section.hover-effect .section-item {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 107, 107, 0.15);
-    border-bottom: 1.5px solid var(--accent-color-1);
-}
-
-.section-build #build-section.hover-effect .section-item {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
-    border-bottom: 1.5px solid var(--accent-color-2);
-}
-
+.section-learn #learn-section.hover-effect .section-item,
+.section-build #build-section.hover-effect .section-item,
 .section-grow #grow-section.hover-effect .section-item {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(78, 235, 197, 0.15);
-    border-bottom: 1.5px solid var(--accent-color-3);
+    border-bottom: 1.5px solid currentColor;
 }
 
 .section-wrapper.hover-effect .section-title {
@@ -559,12 +547,6 @@ a {
 
 .section-wrapper.hover-effect .section-description {
     color: rgba(255, 255, 255, 0.8);
-}
-
-.section-learn #learn-section.hover-effect .action-link,
-.section-build #build-section.hover-effect .action-link,
-.section-grow #grow-section.hover-effect .action-link {
-    color: white;
 }
 
 .section-wrapper.hover-effect .action-link i {
@@ -581,14 +563,8 @@ a {
         padding: 1.5rem;
     }
     
-    .logo-row {
-        margin-bottom: 2rem;
-    }
-    
-    .section {
-        margin-bottom: 2rem;
-    }
-    
+    .logo-row,
+    .section,
     .intro {
         margin-bottom: 2rem;
     }
@@ -597,23 +573,14 @@ a {
         font-size: 1.1rem;
     }
     
-    /* Fix for the "free" text appearing larger than surrounding text */
     .bold-text {
         font-size: inherit;
         font-weight: 700;
     }
     
-    .signature-name {
-        font-size: 1.1rem;
-    }
-    
+    .signature-name,
     .signature-link {
         font-size: 1.1rem;
-    }
-    
-    .section-header {
-        display: flex;
-        align-items: center;
     }
     
     .section-title {
@@ -638,14 +605,6 @@ a {
     .action-link {
         padding-top: 0.75rem;
         padding-bottom: 0.2rem;
-    }
-    
-    .section-header::after {
-        width: 0;
-    }
-    
-    .section-item:hover .section-header::after {
-        width: 0;
     }
     
     .section-item:hover .section-icon::after {
