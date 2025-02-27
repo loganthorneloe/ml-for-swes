@@ -30,9 +30,15 @@
     <main class="container">
         <div class="logo-row">
             <div class="icons">
-                <i id="logo-square" data-lucide="square" class="icon-lg" style="color:var(--accent-color-1)"></i>
-                <i id="logo-circle" data-lucide="circle" class="icon-lg" style="color:var(--accent-color-2)"></i>
-                <i id="logo-play" data-lucide="play" class="icon-lg" style="color:var(--accent-color-3)"></i>
+                <a href="https://mlroadmap.io" target="_blank" rel="noopener">
+                    <i id="logo-square" data-lucide="square" class="icon-lg" style="color:var(--accent-color-1)"></i>
+                </a>
+                <a href="https://endtoendml.com" target="_blank" rel="noopener">
+                    <i id="logo-circle" data-lucide="circle" class="icon-lg" style="color:var(--accent-color-2)"></i>
+                </a>
+                <a href="https://societysbackend.com" target="_blank" rel="noopener">
+                    <i id="logo-play" data-lucide="play" class="icon-lg" style="color:var(--accent-color-3)"></i>
+                </a>
             </div>
         </div>
         
@@ -112,16 +118,16 @@
                 <span class="social-links-text">Questions? Reach out in one of these places:</span>
                 <div class="social-icons">
                     <a href="mailto:loganthorneloe+contact@gmail.com" target="_blank" aria-label="Email"><i data-lucide="mail" class="icon-lg"></i></a>
-                    <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="icon-lg"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-lg"></i></a>
-                    <a href="#" aria-label="YouTube"><i data-lucide="youtube" class="icon-lg"></i></a>
-                    <a href="#" aria-label="Substack"><i data-lucide="bookmark" class="icon-lg"></i></a>
+                    <a href="https://twitter.com/loganthorneloe" target="_blank" rel="noopener" aria-label="Twitter"><i data-lucide="twitter" class="icon-lg"></i></a>
+                    <a href="https://linkedin.com/in/loganthorneloe" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-lg"></i></a>
+                    <a href="https://youtube.com/@loganthorneloe" target="_blank" rel="noopener" aria-label="YouTube"><i data-lucide="youtube" class="icon-lg"></i></a>
+                    <a href="https://substack.com/@loganthorneloe" target="_blank" rel="noopener" aria-label="Substack"><i data-lucide="bookmark" class="icon-lg"></i></a>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
-            <p class="copyright">&copy; 2025 Logan Thorneloe</p>
+            <p class="copyright">&copy; 2023 Logan Thorneloe</p>
         </footer>
     </main>
     <script>
@@ -137,32 +143,33 @@
             const buildSection = document.getElementById('build-section');
             const growSection = document.getElementById('grow-section');
             
-            // Add hover effect for square (Learn)
-            logoSquare.addEventListener('mouseenter', function() {
-                learnSection.classList.add('hover-effect');
-            });
+            // Function to add hover event to icon and its parent anchor
+            function addHoverEffect(icon, section) {
+                // For the icon itself
+                icon.addEventListener('mouseenter', function() {
+                    section.classList.add('hover-effect');
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    section.classList.remove('hover-effect');
+                });
+                
+                // For the parent anchor element
+                if (icon.parentElement.tagName === 'A') {
+                    icon.parentElement.addEventListener('mouseenter', function() {
+                        section.classList.add('hover-effect');
+                    });
+                    
+                    icon.parentElement.addEventListener('mouseleave', function() {
+                        section.classList.remove('hover-effect');
+                    });
+                }
+            }
             
-            logoSquare.addEventListener('mouseleave', function() {
-                learnSection.classList.remove('hover-effect');
-            });
-            
-            // Add hover effect for circle (Build)
-            logoCircle.addEventListener('mouseenter', function() {
-                buildSection.classList.add('hover-effect');
-            });
-            
-            logoCircle.addEventListener('mouseleave', function() {
-                buildSection.classList.remove('hover-effect');
-            });
-            
-            // Add hover effect for play (Grow)
-            logoPlay.addEventListener('mouseenter', function() {
-                growSection.classList.add('hover-effect');
-            });
-            
-            logoPlay.addEventListener('mouseleave', function() {
-                growSection.classList.remove('hover-effect');
-            });
+            // Add hover effects for all icons
+            addHoverEffect(logoSquare, learnSection);
+            addHoverEffect(logoCircle, buildSection);
+            addHoverEffect(logoPlay, growSection);
 
             // Add URL color change on card hover
             learnSection.addEventListener('mouseenter', function() {

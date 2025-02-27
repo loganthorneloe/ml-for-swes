@@ -49,12 +49,18 @@ a {
 }
 
 /* Logo icon hover effects */
+.icons a {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
 .icons [data-lucide] {
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.icons [data-lucide]:hover {
+.icons [data-lucide]:hover, 
+.icons a:hover [data-lucide] {
     transform: scale(1.2);
     filter: brightness(1.2);
 }
