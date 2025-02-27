@@ -76,14 +76,28 @@ a {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, 
-        var(--accent-color-1) 0%, 
-        var(--accent-color-2) 50%, 
-        var(--accent-color-3) 100%);
+    background: linear-gradient(
+        90deg,
+        var(--accent-color-1) 0%,
+        var(--accent-color-2) 33%,
+        var(--accent-color-3) 66%,
+        var(--accent-color-1) 100%
+    );
+    background-size: 300% 100%;
+    animation: gradient-wave 20s linear infinite;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 700;
+}
+
+@keyframes gradient-wave {
+    0% {
+        background-position: 300% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .bold-text {
