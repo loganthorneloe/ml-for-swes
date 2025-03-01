@@ -4,7 +4,7 @@
     --accent-color-1: #a480ff;
     --accent-color-2: #40E0D0;
     --accent-color-3: #eb5757;
-    --background: #000000;
+    --background: #242424;
     --text-color: #e0e0e0;
     --light-text: #a0a0a0;
     --card-border-color: rgba(255,255,255,0.08);
@@ -156,19 +156,19 @@ a {
 
 .section-learn .section-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 107, 107, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
     border-bottom: 1.5px solid var(--accent-color-1);
 }
 
 .section-build .section-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(164, 128, 255, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(64, 224, 208, 0.15);
     border-bottom: 1.5px solid var(--accent-color-2);
 }
 
 .section-grow .section-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(78, 235, 197, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(235, 87, 87, 0.15);
     border-bottom: 1.5px solid var(--accent-color-3);
 }
 
@@ -234,17 +234,17 @@ a {
 
 .section-learn .section-icon::after {
     background-color: var(--accent-color-1);
-    box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 0 8px rgba(164, 128, 255, 0.3);
 }
 
 .section-build .section-icon::after {
     background-color: var(--accent-color-2);
-    box-shadow: 0 0 8px rgba(164, 128, 255, 0.3);
+    box-shadow: 0 0 8px rgba(64, 224, 208, 0.3);
 }
 
 .section-grow .section-icon::after {
     background-color: var(--accent-color-3);
-    box-shadow: 0 0 8px rgba(78, 235, 197, 0.3);
+    box-shadow: 0 0 8px rgba(235, 87, 87, 0.3);
 }
 
 .section-item:hover .section-icon::after {
