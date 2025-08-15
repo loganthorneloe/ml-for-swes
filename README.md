@@ -1,1 +1,1 @@
-# simple-ml-models
+# essential-ml-models
