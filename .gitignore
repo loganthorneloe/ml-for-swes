@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Downloaded datasets (created on demand)
+datasets/
+lastfm-dataset-360K.tar.gz
