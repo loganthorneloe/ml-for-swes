@@ -1,13 +1,13 @@
-# Python caches
-__pycache__/
-*.pyc
+# ignore our lastfm dataset loading...
+lastfm-2k/
 
-# Virtual environments
+# ignore environments
+venv/
 .venv/
+VM/
 
-# Jupyter
-.ipynb_checkpoints/
+.python-version
 
-# Downloaded datasets (created on demand)
-datasets/
-lastfm-dataset-360K.tar.gz
+__pycache__/
+
+model_store/

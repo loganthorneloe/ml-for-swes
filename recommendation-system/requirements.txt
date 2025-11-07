@@ -1,0 +1,5 @@
+pandas
+requests
+torch
+streamlit
+scikit-learn
